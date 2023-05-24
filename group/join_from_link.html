@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+  <html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+       <!--our style.css-->
+      <link type="text/css" rel="stylesheet" href="../css/style.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <header>
+        <nav role="navigation">
+            <div class="nav-wrapper container">
+                 <a id="logo-container" href="/" class="brand-logo center">تطبيق تحدي</a>
+            </div>
+          </nav>  <!--  -->
+        </header>
+        <!--============================================================================================-->
+        <main style="margin-top: 60px;">
+            <p class="center">إسم المجموعة</p><h5 id="group_name"  class="brand-logo center"></h5> 
+           <div class="row center"><div class="col s6 offset-s3">
+               
+                   <div class="input-field ">
+                     <input value=""    id="user_name" type="text" class="col6 validate center">
+                     <label class="active" for="user_name">أكتب إسمك</label>
+                   </div>
+                  
+                   <button class="btn waves-effect waves-light" id="start_btn"  > <i class="material-icons right">send</i>ابدأ
+                 </button>
+                </div>
+           </div>
+       </main>
+        <!--============================================================================================-->
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+                <h5 class="white-text">تطبيق تحدي</h5>
+                <p class="grey-text text-lighten-4">
+                     عن تطبيق تحدي عن تطبيق تحدي عن تطبيق تحديعن تطبيق تحدي.</p>
+            </div>
+          </div> 
+          <div class="footer-copyright">
+            <div class="container">Made by <a href="">Me </a></div>
+          </div>
+        </footer>
+      
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="../js/materialize.min.js"></script>
+         <script>
+       /*   $.ajax({
+          method : 'GET',
+          url:'http://localhost/tahaddy_dash/public/get_group?id='+parseURLParams(window.location.href).id,
+           dataType: 'json',
+             success:function newQuestion(data){
+          //genrate quiz link 
+
+          //  $("#group_name").text(data[0].group_name);
+              // window.location.href="group_link.html?g_id="+data+'#hash';
+            }}); */
+       ///////////////////////////////////////////////////////////////////////////
+     function parseURLParams(url) {
+    var queryStart = url.indexOf("?") + 1,
+        queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+        query = url.slice(queryStart, queryEnd - 1),
+        pairs = query.replace(/\+/g, " ").split("&"),
+        parms = {}, i, n, v, nv;
+
+    if (query === url || query === "") return;
+
+    for (i = 0; i < pairs.length; i++) {
+        nv = pairs[i].split("=", 2);
+        n = decodeURIComponent(nv[0]);
+        v = decodeURIComponent(nv[1]);
+
+        if (!parms.hasOwnProperty(n)) parms[n] = [];
+        parms[n].push(nv.length === 2 ? v : null);
+    }
+    return parms;
+}
+</script>
+
+   <script>
+ 
+//////////////////////////////////////////////////////////////////////////////
+$("#start_btn").click(function(){
+ /* alert("user name is:"+$('#user_name:text').val());
+ alert("group id="+parseURLParams(window.location.href).id); */
+ let name= $('#user_name:text').val();
+ let id= parseURLParams(window.location.href).g_id;//id is group id
+ let topicid = parseURLParams(window.location.href).topicid;
+ //send ajax to update number of joined
+ $.ajax({
+      method : 'GET',
+      url:'http://localhost/tahaddy_dash_sidbar/public/update_of_joined/'+id,
+         //dataType: 'json',
+      success:function newQuestion(data){     
+     
+    // console.log(data);
+        }});
+
+window.location.href="quiz_page.html?g_id="+id+"&topicid="+topicid+"&name="+name;
+  
+});
+////////////////////////////////////////////////////////////////////////////
+     </script>
+       <!--  <script src="js/bundle.js"></script> -->
+      </body>
+      
+  </html>

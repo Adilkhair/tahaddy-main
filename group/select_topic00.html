@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+  <html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+       <!--our style.css-->
+      <link type="text/css" rel="stylesheet" href="../css/style.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <header>
+        <nav role="navigation">
+            <div class="nav-wrapper container">
+                 <a id="logo-container" href="/" class="brand-logo center">  تطبيق تحدي</a>
+             
+            </div>
+          </nav>  <!--  -->
+        </header>
+      
+        <main style="margin-top: 20px;">
+             <h2 id="logo-container" class="brand-logo center">موضوع التحدي</h2>
+             <div class="container" id="quiz_cat"><br/><br/>
+
+               <!--   <div class="row  center-align">
+                   <a class="waves-effect waves-light btn btn-large home_scr"   href="group_link.html">القران كريم</a>
+                 </div>
+                  <div class="row  center-align"> 
+                    <a class="waves-effect waves-light btn btn-large home_scr" href="group_link.html">السيرة النبوية</a>
+                 </div>
+                 <div class="row  center-align"> 
+                   <a class="waves-effect waves-light btn btn-large home_scr" href="group_link.html">كلمات إنكليزية</a>
+                  </div>
+                 <div class="row  center-align"> 
+                   <a class="waves-effect waves-light btn btn-large home_scr" href="group_link.html">معلومات عامة</a>
+                 </div> -->
+              </div>
+        </main>
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+                <h5 class="white-text">تطبيق تحدي</h5>
+                <p class="grey-text text-lighten-4">
+                     عن تطبيق تحدي عن تطبيق تحدي عن تطبيق تحديعن تطبيق تحدي.
+                </p>
+            </div>
+          </div> 
+          <div class="footer-copyright">
+            <div class="container">Made by <a href="">Me </a></div>
+          </div>
+        </footer>
+      
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="../js/materialize.min.js"></script>
+        <!--  <script src="../js/app.js"></script>
+       <script src="js/bundle.js"></script> -->
+      
+       <script>
+        jQuery(document).ready(function(){
+         $.ajax({
+     method : 'GET',
+     dataType: 'json',
+     url:'http://localhost/tahaddy_dash/public/topics',
+     success:function newQuestion(data){
+      // alert(data);
+       const container = document.querySelector("#quiz_cat");
+       /*  const topics = [
+           { name: "قران كريم", id:"1"  },
+           { name: "السيييرة النبوية" , id:"2" },
+           { name: "كلمات انكليزية كريم" , id:"3" },
+           { name: "معلومات عامة" , id:"4" },
+           ] */
+        // alert(data[0].name); 
+             let output = ""
+             data.forEach(
+               ({ name, id }) =>
+                 (output += `
+                           <div class="row  center-align">
+                           <a class="waves-effect waves-light btn btn-large home_scr btn_opt" href="group_link.html?g_id=${id}" id=${id} >${name}</a>
+                         </div>       `)
+             );
+             container.innerHTML = output;
+      
+     }});
+      
+      
+     //////////////////////////////////////////////////////////////////////
+     //href="group_link.html?g_id=${id}"     
+     $(this).on('click', function(){
+     /* 
+      var text = $(this).attr('id');
+    alert(text);
+     
+          localStorage.setItem('topic',$(this).text());
+           var gname = localStorage.getItem('gname');
+           var topic =  localStorage.getItem('topic');
+           //////////////
+           alert("gname:"+gname);
+           alert("topic:"+topic);
+           $.ajax({
+            method : 'GET',
+    url:'http://localhost/tahaddy_dash/public/create_group?topic='+topic+'&group_name='+gname,
+  //  dataType: 'json',
+    success:function newQuestion(data){
+      //genrate quiz link 
+      alert("ajax sccess");
+    alert("data:"+data);
+
+ //  window.location.href="group_link.html?g_id="+data+'&topic_id='+topic_id+'#hash';//g_id == is topic id
+    }});
+ return false; */
+  
+   });
+
+  });
+        
+      </script>
+     
+      
+      </body>
+      
+  </html>

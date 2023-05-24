@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+       <!--our style.css-->
+      <link type="text/css" rel="stylesheet" href="../css/style.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <header>
+        <nav role="navigation">
+            <div class="nav-wrapper container">
+                 <a id="logo-container" href="/" class="brand-logo center">تطبيق تحدي</a>
+            </div>
+          </nav>  <!--  -->
+        </header>
+      
+        <main style="margin-top: 60px;">
+           <!--  <h5 id="logo-container"  class="brand-logo center">إسم المجموعة</h5> -->
+            <div class="row center"><div class="col s6 offset-s3">
+                <form   onsubmit="passing()" method="GET" action="select_topic.html" >
+                    <div class="input-field ">
+                      <input value=""    id="gname" type="text" required="required" class="col6 validate center">
+                      <label class="active" for="first_name">إسم المجموعة</label>
+                    </div>
+
+                    <div class="input-field ">
+                      <input value=""    id="admin_name" type="text" required="required" class="col6 validate center">
+                      <label class="active" for="admin_name">إسمك</label>
+                    </div>
+
+                   
+                    <button class="btn waves-effect waves-light" type="submit"  > <i class="material-icons right">send</i>إنشاء مجموعة
+                  </button>
+                </form></div>
+            </div>
+        </main>
+      
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+                <h5 class="white-text">تطبيق تحدي</h5>
+                <p class="grey-text text-lighten-4">
+                     عن تطبيق تحدي عن تطبيق تحدي عن تطبيق تحديعن تطبيق تحدي.</p>
+            </div>
+          </div> 
+          <div class="footer-copyright">
+            <div class="container">Made by <a href="">Me </a></div>
+          </div>
+        </footer>
+      
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="../js/materialize.min.js"></script>
+      
+       <!--  <script src="js/bundle.js"></script> -->
+     
+       <script>
+        function passing(){
+         // Store it in the local storage
+         localStorage.setItem('gname',$('#gname').val()  );
+         localStorage.setItem('admin_name',$('#admin_name').val());
+          
+        }
+        </script>
+        
+     
+      </body>
+      
+  </html>

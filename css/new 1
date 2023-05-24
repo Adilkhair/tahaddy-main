@@ -1,0 +1,38 @@
+الطلاب
+النمازج
+ المستخدمين
+ 
+ [نموذج الطالب المتعثر دراسيا بالجامعة - form id = 14]
+ 
+ background-color: #EFEFEF;
+    margin-bottom: 10p
+	
+	  <i class="bx bx-arrow-back"></i>
+	    <i class="bx bx-arrow-report"></i>
+	  add page to show the forms
+	  add page to show all users
+	  add message - sccess inserted!
+	  
+	  add user privelages
+	  add reports
+	  
+	      background-color: gainsboro; --nice gray 
+		  
+		  * <slect> add class form-control
+		  
+		  .field_wrapper div {
+    margin-bottom: 10px;
+}
+
+ 
+
+
+   Apple started supporting PWA from iOS 11.3
+   Make sure that you have cleared the browsing data.
+   Visit the website that applyed PWA 
+   
+   Visit the website that you have installed PWA
+Note: Currently like as on Chrome for Android and other browsers on Android, there’s no inbuilt prompt to show Add to Homescreen for iOS devices.
+ Due to that reason you need to manually add the PWA to your Homescreen.
+Tap the Share button (at the browser options)
+From the options tap the Add to Homescreen option, you can notice an icon of the website or screenshot of website added to your devices homescreen instantly.

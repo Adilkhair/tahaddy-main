@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'JF-Flat-Regular';
+    src: url('../fonts/JF-Flat-Regular.ttf')  format('truetype');
+     /*  url("/fonts/JF Flat Regular/OpenSans-Regular-webfont.woff") format("woff"); */
+  }
+  
+ 
+body {
+    font-family: 'JF-Flat-Regular';
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    
+}
+#topic_name{
+    color: #1cb0f6;  
+}
+main {
+    flex: 1 0 auto;
+}
+.home_scr {
+        border-radius: 10px !important;
+        width: 70% !important;
+    color: #1cb0f6 !important;
+   
+}
+.home_body {
+    background-color: #ddf4ff !important;
+}
+.start_btn {
+    color: #fff !important;
+    background-color: #1cb0f6 !important ;
+     border: 1px #1899d6 solid;
+   height: 60px !important;
+    border-radius: 10px !important;
+    width: 25% !important;
+    font-size: 20px;
+   font-weight: 600 !important;
+    
+}
+.quiz_scr{
+    border-radius: 10px !important;
+    width: 50% !important;
+   
+}
+
+.btn, .btn-large, .btn-small{
+    color: #000 !important;
+    background-color: #fff ;
+     border: 1px gray solid;
+     
+}
+
+ /*.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #fff !important;
+}
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+    background-color: #fff !important;
+} */
+
+#after_result_action {
+    font-size: 17px;
+    color: #fff;
+    
+    height: 100%;
+     
+    width: 100%;
+}
+nav, .page-footer{
+     
+    color: #000 !important;
+}

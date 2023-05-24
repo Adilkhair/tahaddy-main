@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+  <html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+       <!--our style.css-->
+      <link type="text/css" rel="stylesheet" href="../css/style.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+
+     
+    </head>
+    <body>
+        <header>
+        <nav role="navigation">
+            <div class="nav-wrapper container">
+                 <a id="logo-container" href="/" class="brand-logo center">تطبيق تحدي</a>
+            </div>
+          </nav>  <!--  -->
+        </header>
+      
+        <main style="margin-top: 60px;">
+          <h5 id=""  class="brand-logo center">عدد المضافافين</h5>  
+          <h5 id="joined_count"  class="brand-logo center"></h5>  
+
+            <div class="row center">
+              
+                <div class="col s6 offset-s3" >
+                <form action="select_topic.html" method="post" >
+                    <input  value="http://www.gtahaddy.com/?g=gnam&id=12" id="test_link" type="text"  class="col6 validate center"  readonly>
+                </form> 
+                </div>
+                <div class="col"> 
+                  <br>
+                <a  onclick="copy_link()"  >نسخ الرابط</a>
+              </div>
+        
+        </div> 
+        <div class="row center"><a onClick="join()" class="btn waves-effect waves-light btn-large center"><i class="material-icons right"></i>إبداء التحدي</a>   
+        </a>
+            </div>
+          
+        </main>
+      
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+                <h5 class="white-text">تطبيق تحدي</h5>
+                <p class="grey-text text-lighten-4">
+                     عن تطبيق تحدي عن تطبيق تحدي عن تطبيق تحديعن تطبيق تحدي.</p>
+            </div>
+          </div> 
+          <div class="footer-copyright">
+            <div class="container">Made by <a href="">Me </a></div>
+          </div>
+        </footer>
+      
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="../js/materialize.min.js"></script>
+      
+       <!--  <script src="js/bundle.js"></script> -->
+      <script>
+
+     jQuery(document).ready(function(){
+
+      get_joined_count(parseURLParams(window.location.href).g_id );
+      topicid= parseURLParams(window.location.href).topicid;
+       var gname = localStorage.getItem('gname');
+       var topic = localStorage.getItem('topic');
+       
+         alert (" topicid="+ topicid) ;
+      //id= is group id
+       $('#test_link:text').val("join_from_link.html?g_id="+parseURLParams(window.location.href).g_id +"&topicid="+topicid);
+     });
+
+     ///////////////////////////////////////////////////////////////////////////
+     function parseURLParams(url) {
+    var queryStart = url.indexOf("?") + 1,
+        queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+        query = url.slice(queryStart, queryEnd - 1),
+        pairs = query.replace(/\+/g, " ").split("&"),
+        parms = {}, i, n, v, nv;
+
+    if (query === url || query === "") return;
+
+    for (i = 0; i < pairs.length; i++) {
+        nv = pairs[i].split("=", 2);
+        n = decodeURIComponent(nv[0]);
+        v = decodeURIComponent(nv[1]);
+
+        if (!parms.hasOwnProperty(n)) parms[n] = [];
+        parms[n].push(nv.length === 2 ? v : null);
+    }
+    return parms;
+}
+//////////////////////////////////////////////////////////////////////////////
+function join(){
+//  alert("link:"+$('#test_link:text').val());
+     
+    //setTimeout(function(){  }, 1500);
+    topicid= parseURLParams(window.location.href).topicid;
+    admin_name = parseURLParams(window.location.href).admin_name
+ window.location.href="quiz_page.html?g_id="+parseURLParams(window.location.href).g_id +"&topicid="+topicid+"&name="+admin_name;
+
+   return false;
+//make the group link avalable
+  
+}
+/////////////////////////////////////////////////////////////////////////
+function copy_link(){
+  var clipboardText = "";
+     clipboardText = $('#test_link:text').val();
+     copyToClipboard( clipboardText );
+    iqwerty.toast.toast('تم نسخ الرابط');
+}
+////////////////////////////////////////////////////////////////////
+function copyToClipboard(text) {
+
+var textArea = document.createElement( "textarea" );
+textArea.value = text;
+document.body.appendChild( textArea );       
+textArea.select();
+
+try {
+   var successful = document.execCommand( 'copy' );
+   var msg = successful ? 'successful' : 'unsuccessful';
+//  console.log('Copying text command was ' + msg);
+} catch (err) {
+   console.log('Oops, unable to copy',err);
+}    
+document.body.removeChild( textArea );
+}
+////////////////////////////////////////////////////////////////////
+/********************************************************************/
+function get_joined_count(id) {
+$.ajax({
+      method : 'GET',
+      url:'http://localhost/tahaddy_dash_sidbar/public/number_of_joined/'+id,
+      //  dataType: 'json',
+      success:function newQuestion(data){     
+     // alert("المنضمين للمجموة"+data);
+     $("#joined_count").text(data);
+        }});
+
+  }
+/*******************************************************************************/
+      </script>
+      
+      
+      <script src="toast.min.js"></script>
+    
+    </body>
+      
+  </html>
