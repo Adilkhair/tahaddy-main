@@ -11,18 +11,37 @@
       <!--Let browser know website is optimized for mobile-->
       <link rel="manifest" href="manifest.json" />
       <link rel="apple-touch-icon" sizes="192x192" href="img/icons/icon-192x192.png">
-
+       
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body class="home_body">
-  
+      <nav style="background-color: #1cb0f6 ;padding: 0 20px">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">تطبيق نور</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="#">قراءة</a></li>
+            <li><a href="#">أختبارات</a></li>
+            <li><a href="#">ملخصات</a></li>
+            <li><a href="#">إمتحانات</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+         <li><a href="#">قراءة</a></li>
+        <li><a href="#">أختبارات</a></li>
+        <li><a href="#">ملخصات</a></li>
+        <li><a href="#">إمتحانات</a></li>
+      </ul>
+                  
       
         <main style="margin-top: 20px;">
-      
+        
             <div class="container"> 
               <div class="row">
                  <div class="col s12">
-                  <h2 class="home_scr" style="width: 100% !important;"><b>تطبيق نور</b> إختبارات </h2>
+                  <h2 class="home_scr" style="width: 100% !important;"><b>تطبيق نور</b> التعليمي </h2>
                 </div>
               </div> 
 
@@ -48,7 +67,20 @@
       
         <script src="js/jquery-3.5.1.js"></script>
         <script src="js/materialize.min.js"></script>
-      
+      <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {edge:'right'});
+  });
+
+  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+   var collapsibleElem = document.querySelector('.collapsible');
+   var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+
+  // Or with jQuery
+
+  
+      </script>
       <!--   <script src="js/app.js"></script>   -->
       </body>
       
