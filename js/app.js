@@ -82,7 +82,7 @@ for(let i=0; i<options; i++){
       $('#btn3').text( data2[randomnumber].question_choice[2].choice); */
    
     let correctAnsIndex=0;
-    let correctAns ="";
+      correctAns ="";
     data2[randomnumber].question_choice.forEach(myFunction);
     function myFunction(item, index, arr) {
       if(arr[index].is_right == "y"){
