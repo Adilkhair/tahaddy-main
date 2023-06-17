@@ -53,7 +53,7 @@ $.ajax({
   dataType: 'json', 
   success:function newQuestion(data){
     // alert(data);
-     $("#vister_counter").text( " المتواجدون حاليا "+ data);
+     $("#vister_counter").text( "زائر رقم "+ data);
   }
 });
 //////////////////////////////////////////////////////////////////////////////////////////

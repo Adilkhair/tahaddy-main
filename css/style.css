@@ -10,7 +10,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    
+    background-image: url("img/bg.png");
+
 }
 #topic_name{
     color: #1cb0f6;  
